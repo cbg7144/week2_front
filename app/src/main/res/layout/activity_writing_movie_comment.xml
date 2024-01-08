@@ -51,7 +51,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.416" />
 
-    <TextView
+    <EditText
         android:id="@+id/OneLineComment"
         android:layout_width="318dp"
         android:layout_height="46dp"
@@ -63,7 +63,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.616" />
 
-    <TextView
+    <EditText
         android:id="@+id/DetailedComment"
         android:layout_width="318dp"
         android:layout_height="188dp"

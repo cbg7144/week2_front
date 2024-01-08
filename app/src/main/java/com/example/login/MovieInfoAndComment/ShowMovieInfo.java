@@ -62,12 +62,6 @@ public class ShowMovieInfo extends AppCompatActivity {
             }
         });
 
-        //
-
-
-
-
-
         // 서버랑 통신해서 Movie에 관한 정보 담아오기
         getMovieInfo(docid);
 
