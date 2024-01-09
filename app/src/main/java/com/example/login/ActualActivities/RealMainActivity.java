@@ -46,8 +46,8 @@ public class RealMainActivity extends AppCompatActivity {
 
     private void setTabLayout() {
         tabLayout = binding.tabLayout;
-        String[] tabTitles = {"Contact", "Gallery", "Todo"};
-        int[] tabIcons = {R.drawable.ic_contact, R.drawable.ic_gallery, R.drawable.ic_check};
+        String[] tabTitles = {"Search", "My List", "Game"};
+        int[] tabIcons = {R.drawable.baseline_local_movies_24, R.drawable.baseline_person_2_24, R.drawable.baseline_videogame_asset_24};
 
         new TabLayoutMediator(tabLayout, viewPager,
                 (tab, position) -> {

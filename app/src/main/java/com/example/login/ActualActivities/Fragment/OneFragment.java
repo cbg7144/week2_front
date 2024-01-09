@@ -123,11 +123,7 @@ public class OneFragment extends Fragment {
             public void onItemClick(View view, int position) {
                 // Handle the click event for the movie item
                 Movie clickedMovie = movieList.get(position);
-                Toast.makeText(getActivity(), "Clicked on: " + clickedMovie.getTitle(), Toast.LENGTH_SHORT).show();
                 String tossDocid = clickedMovie.getDocid();
-                // You can also start a new activity or fragment here
-                // For example, to show detailed information about the clicked movie
-
                 Intent intent = new Intent(getActivity(), ShowMovieInfo.class);
                 intent.putExtra("tossDocid", tossDocid);
                 startActivity(intent);
