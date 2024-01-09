@@ -3,6 +3,8 @@ package com.example.login.ActualActivities.Functions;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RatingBar;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.login.ActualActivities.Movie.MovieComment;
@@ -32,6 +34,12 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentHolder> {
         MovieComment movieComment = commentList.get(position);
         holder.oneLineComment.setText(movieComment.getLinecomment());
         // If you have a rating bar in your MovieComment, bind it here
+        // Assuming you have a getter method in your MovieComment class to get the rating
+        float ratingValue = movieComment.getScore(); // Get the rating value from your MovieComment object
+        // Use the holder to find your RatingBar and set the rating
+        RatingBar ratingBar = holder.itemView.findViewById(R.id.ratingBar2);
+        ratingBar.setIsIndicator(true);
+        ratingBar.setRating(ratingValue);
     }
 
     @Override
