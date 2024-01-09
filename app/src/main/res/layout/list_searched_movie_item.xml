@@ -4,108 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="150dp"
     android:paddingBottom="20dp"
+    android:background="@drawable/layout_line_list_searched_movie"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <TextView
-        android:id="@+id/oneLineCommentShowMovieInfo3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="상영시간"
-        android:textSize="16sp"
-        android:fontFamily="@font/nanumgothic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.403"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.67" />
-
-    <TextView
-        android:id="@+id/oneLineCommentShowMovieInfo4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="개봉일자"
-        android:fontFamily="@font/nanumgothic"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.403"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95" />
-
-    <TextView
-        android:id="@+id/userListItem_ID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:text="Docid"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:fontFamily="@font/nanumgothic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.64"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.8" />
-
-    <TextView
-        android:id="@+id/userListItem_Password"
-        android:layout_width="267dp"
-        android:layout_height="33dp"
-        android:text="title"
-        android:textSize="20sp"
-        android:fontFamily="@font/nanumgothicextrabold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.076" />
-
-    <TextView
-        android:id="@+id/userListItem_Name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:text="dm"
-        android:textSize="16sp"
-        android:fontFamily="@font/nanumgothic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.62"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.2" />
-
-    <TextView
-        android:id="@+id/oneLineCommentShowMovieInfo"
-        android:layout_width="165dp"
-        android:layout_height="22dp"
-        android:text="genre"
-        android:fontFamily="@font/nanumgothic"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.939"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.406" />
-
-    <TextView
-        android:id="@+id/oneLineCommentShowMovieInfo2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="개요"
-        android:textSize="16sp"
-        android:fontFamily="@font/nanumgothic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.372"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.396" />
 
     <ImageView
         android:id="@+id/poster"
@@ -116,6 +16,126 @@
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.533" />
+        app:layout_constraintVertical_bias="1.1" />
+
+    <LinearLayout
+        android:id = "@+id/linearLayoutListSearchedMovie1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/poster"
+        app:layout_constraintTop_toTopOf="@id/poster">
+        <TextView
+            android:id="@+id/userListItem_Password"
+            android:layout_width="267dp"
+            android:layout_height="33dp"
+            android:text="title"
+            android:textSize="20sp"
+            android:fontFamily="@font/nanumgothicextrabold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.076" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id = "@+id/linearLayoutListSearchedMovie2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="1dp"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/linearLayoutListSearchedMovie1"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutListSearchedMovie1">
+        <TextView
+            android:id="@+id/oneLineCommentShowMovieInfo2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nanumgothic"
+            android:text="개요"
+            android:padding="5dp"
+            android:textSize="16sp"/>
+        <!-- Add an empty View to create spacing -->
+        <View
+            android:layout_width="16dp" android:layout_height="0dp"/>
+        <TextView
+            android:id="@+id/oneLineCommentShowMovieInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nanumgothic"
+            android:text="genre"
+            android:padding="5dp"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id = "@+id/linearLayoutListSearchedMovie3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="1dp"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/linearLayoutListSearchedMovie2"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutListSearchedMovie2">
+        <TextView
+            android:id="@+id/oneLineCommentShowMovieInfo3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="상영시간"
+            android:textSize="16sp"
+            android:padding="5dp"
+            android:fontFamily="@font/nanumgothic"/>
+        <!-- Add an empty View to create spacing -->
+        <View
+            android:layout_width="16dp" android:layout_height="0dp"/>
+        <TextView
+            android:id="@+id/userListItem_ID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Docid"
+            android:textSize="16sp"
+            android:padding="5dp"
+            android:fontFamily="@font/nanumgothic" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id = "@+id/linearLayoutListSearchedMovie4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="1dp"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/linearLayoutListSearchedMovie3"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutListSearchedMovie3">
+
+        <TextView
+            android:id="@+id/oneLineCommentShowMovieInfo4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="개봉일자"
+            android:fontFamily="@font/nanumgothic"
+            android:textSize="16sp"
+            android:padding="5dp"/>
+        <!-- Add an empty View to create spacing -->
+        <View
+            android:layout_width="16dp" android:layout_height="0dp"/>
+        <TextView
+            android:id="@+id/userListItem_Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="dm"
+            android:textSize="16sp"
+            android:padding="5dp"
+            android:fontFamily="@font/nanumgothic"/>
+
+    </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

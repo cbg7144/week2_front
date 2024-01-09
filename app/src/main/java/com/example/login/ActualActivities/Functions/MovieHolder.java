@@ -10,15 +10,21 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.login.R;
 
 public class MovieHolder extends RecyclerView.ViewHolder {
-    TextView docid, title, directorNm, genre;
+    TextView runtime, title, reRlsDate, genre;
     ImageView poster;
 
     public MovieHolder(@NonNull View itemView, final MovieAdapter.OnItemClickListener listener) {
         super(itemView);
-        docid = itemView.findViewById(R.id.userListItem_ID);
+        // 상영시간
+        runtime = itemView.findViewById(R.id.userListItem_ID);
+        //개봉일자
+        reRlsDate = itemView.findViewById(R.id.userListItem_Name);
+
+        // 제목
         title = itemView.findViewById(R.id.userListItem_Password);
-        directorNm = itemView.findViewById(R.id.userListItem_Name);
+        // 장르
         genre = itemView.findViewById(R.id.oneLineCommentShowMovieInfo);
+        // 포스터
         poster = itemView.findViewById(R.id.poster);
 
         itemView.setOnClickListener(new View.OnClickListener() {

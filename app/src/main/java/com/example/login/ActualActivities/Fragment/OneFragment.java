@@ -56,7 +56,6 @@ public class OneFragment extends Fragment {
         getButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v)
-            //{getAllMovies();}
             {showSearchedMovie(v);}
         });
 
