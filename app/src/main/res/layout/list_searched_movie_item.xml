@@ -2,69 +2,120 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="150dp"
     android:paddingBottom="20dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/oneLineCommentShowMovieInfo3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="상영시간"
+        android:textSize="16sp"
+        android:fontFamily="@font/nanumgothic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.403"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.67" />
+
+    <TextView
+        android:id="@+id/oneLineCommentShowMovieInfo4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="개봉일자"
+        android:fontFamily="@font/nanumgothic"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.403"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
 
     <TextView
         android:id="@+id/userListItem_ID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:text="User ID"
-        android:textSize="16sp"
-        android:textStyle="bold"
+        android:text="Docid"
         android:textColor="@color/black"
-
+        android:textSize="16sp"
+        android:fontFamily="@font/nanumgothic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.64"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintVertical_bias="0.8" />
 
     <TextView
         android:id="@+id/userListItem_Password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="User Password"
-        android:textSize="16sp"
-
+        android:layout_width="267dp"
+        android:layout_height="33dp"
+        android:text="title"
+        android:textSize="20sp"
+        android:fontFamily="@font/nanumgothicextrabold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userListItem_ID"
-        />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.076" />
 
     <TextView
         android:id="@+id/userListItem_Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="User Name"
         android:layout_margin="20dp"
+        android:text="dm"
         android:textSize="16sp"
-
-        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="@font/nanumgothic"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintHorizontal_bias="0.62"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.2" />
 
     <TextView
         android:id="@+id/oneLineCommentShowMovieInfo"
+        android:layout_width="165dp"
+        android:layout_height="22dp"
+        android:text="genre"
+        android:fontFamily="@font/nanumgothic"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.939"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.406" />
+
+    <TextView
+        android:id="@+id/oneLineCommentShowMovieInfo2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:text="User Age"
-
+        android:text="개요"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/userListItem_Name"
+        android:fontFamily="@font/nanumgothic"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintHorizontal_bias="0.372"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.396" />
 
     <ImageView
         android:id="@+id/poster"
-        android:layout_width="65dp"
-        android:layout_height="63dp"
+        android:layout_width="93dp"
+        android:layout_height="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.952" />
+        app:layout_constraintVertical_bias="0.533" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
