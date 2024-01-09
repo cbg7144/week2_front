@@ -114,7 +114,7 @@ public class ShowMovieInfo extends AppCompatActivity {
                     }
                     @Override
                     public void onFailure(Call<Movie> call, Throwable t) {
-                        Toast.makeText( ShowMovieInfo.this, "Failed to load users", Toast.LENGTH_LONG).show();
+                        Toast.makeText( ShowMovieInfo.this, "Failed to load movie info", Toast.LENGTH_LONG).show();
                     }
                 });
     }

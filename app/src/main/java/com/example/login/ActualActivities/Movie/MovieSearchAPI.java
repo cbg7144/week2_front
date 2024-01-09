@@ -27,4 +27,7 @@ public interface MovieSearchAPI {
     @POST("/comment/save")
     Call<MovieComment> saveComment(@Body SendingMovieComment sendingMovieComment);
 
+    // GameId를 주면, 해당 movie에 대한 정보를 가져옴
+    @GET("/game/id")
+    Call<MovieGame> getMovieGameInfo(@Query("id") String GameId);
 }
