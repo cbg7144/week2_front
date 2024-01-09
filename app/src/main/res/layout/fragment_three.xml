@@ -3,29 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/Quiz"
+    android:background="#FFFFFF"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/QuizGameTitle"
-        android:layout_width="91dp"
-        android:layout_height="30dp"
+        android:layout_width="196dp"
+        android:layout_height="41dp"
         android:text="영화 초성퀴즈"
+        android:textSize="24sp"
+        android:fontFamily="@font/nanumgothic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintHorizontal_bias="0.068"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
+        app:layout_constraintVertical_bias="0.037" />
 
     <TextView
         android:id="@+id/WhatIsTitle"
         android:layout_width="156dp"
         android:layout_height="30dp"
         android:text="이 영화의 제목은?"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:fontFamily="@font/nanumgothicbold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.226" />
@@ -35,6 +40,12 @@
         android:layout_width="225dp"
         android:layout_height="136dp"
         android:text="ㅎㄹ ㅍㅌ"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/nanumgothicbold"
+        android:background='@drawable/layout_question'
+        android:elevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -47,9 +58,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="5/5"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.835"
+        app:layout_constraintVertical_bias="0.675"
+        app:layout_constraintHorizontal_bias="0.75"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -58,59 +71,68 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
-        android:hint="입력하세용"
+        android:hint="입력하세요"
+        android:textSize="15sp"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.528" />
-
+        app:layout_constraintVertical_bias="0.57" />
+    <!--원래: visible-->
     <Button
         android:visibility="visible"
         android:id="@+id/AnsBtn"
-        android:layout_width="57dp"
-        android:layout_height="27dp"
-        android:text="Button"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:text="확인"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:background="@drawable/layout_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.586" />
+        app:layout_constraintVertical_bias="0.68" />
 
+    <!--원래: gone-->
     <ImageView
         android:visibility="gone"
         android:id="@+id/AnsPoster"
-        android:layout_width="205dp"
-        android:layout_height="314dp"
+        android:layout_width="258dp"
+        android:layout_height="360dp"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.237"
         tools:srcCompat="@tools:sample/avatars" />
-
+    <!--원래: gone-->
     <TextView
         android:visibility="gone"
         android:id="@+id/AnsTitle"
         android:layout_width="146dp"
         android:layout_height="55dp"
-        android:text="해리 포터"
+        android:text="해리포터"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.678" />
-
+    <!--원래: gone-->
     <Button
         android:visibility="gone"
         android:id="@+id/NextBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Next"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:text="다음"
+        android:gravity="center"
+        android:background="@drawable/layout_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.812" />
+        app:layout_constraintVertical_bias="0.75" />
 </androidx.constraintlayout.widget.ConstraintLayout>

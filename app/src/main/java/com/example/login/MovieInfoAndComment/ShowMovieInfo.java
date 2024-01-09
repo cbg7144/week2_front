@@ -23,6 +23,9 @@ import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
@@ -86,19 +89,33 @@ public class ShowMovieInfo extends AppCompatActivity {
 
                         TextView titleTextView = findViewById(R.id.titleShowMovieInfo);
                         titleTextView.setText(movie.getTitle());
-                        TextView directorTextView = findViewById(R.id.directorShowMovieInfo);
-                        directorTextView.setText(movie.getDirectorNm());
-                        TextView genreTextView = findViewById(R.id.genreShowMovieInfo);
-                        genreTextView.setText(movie.getGenre());
 
-                        // 흠 예고편으로 연결되는 걸 어떻게 구현하지?? - button 생각중
-                        TextView VodTextView = findViewById(R.id.vodShowMovieInfo);
-                        VodTextView.setText(movie.getVodUrl());
+                        TextView genreTextView = findViewById(R.id.genreShowMovieInfo);
+                        genreTextView.setText("장르          "+movie.getGenre());
+
+                        TextView runtimeTextView = findViewById(R.id.runtimeShowMovieInfo);
+                        runtimeTextView.setText("상영시간   "+Integer.toString(movie.getRuntime())+"(분)");
+
+                        TextView rlsDateTextView = findViewById(R.id.rlsDateShowMovieInfo);
+                        String inputFormat = "yyyyMMdd";
+                        String outputFormat = "yyyy/MM/dd";
+                        String outputString = convertDateFormat(movie.getReRlsDate(), inputFormat, outputFormat);
+                        rlsDateTextView.setText("개봉일자   "+outputString);
+
+                        TextView ratingTextView = findViewById(R.id.ratingShowMovieInfo);
+                        ratingTextView.setText("상영등급   "+movie.getRating());
+
+                        TextView dirNmTextView = findViewById(R.id.dirNmShowMovieInfo);
+                        dirNmTextView.setText("감독          "+movie.getDirectorNm());
+
+                        TextView actorTextView = findViewById(R.id.actorShowMovieInfo);
+                        actorTextView.setText("배우          "+movie.getActor1()+", "+movie.getActor2());
 
                         // Load the poster image using Picasso
                         String PosterimgURL = movie.getPosterUrl();
                         ImageView poster = findViewById(R.id.PosterShowMovieInfo);
                         Picasso.get().load(PosterimgURL).into(poster);
+
                         // Load the StillCut image using Picasso
                         String StillURL = movie.getStillUrl();
                         ImageView stillCut = findViewById(R.id.StealCutShowMovieInfo);
@@ -117,6 +134,18 @@ public class ShowMovieInfo extends AppCompatActivity {
                         Toast.makeText( ShowMovieInfo.this, "Failed to load movie info", Toast.LENGTH_LONG).show();
                     }
                 });
+    }
+
+    public static String convertDateFormat(String inputDate, String inputFormat, String outputFormat) {
+        try {
+            SimpleDateFormat inputDateFormat = new SimpleDateFormat(inputFormat);
+            SimpleDateFormat outputDateFormat = new SimpleDateFormat(outputFormat);
+            Date date = inputDateFormat.parse(inputDate);
+            return outputDateFormat.format(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null; // Return null if there's an error in parsing
+        }
     }
 
     // 영화 comment 관련 모든 거 긁어오는 함수
