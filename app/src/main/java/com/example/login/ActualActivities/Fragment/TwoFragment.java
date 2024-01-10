@@ -15,6 +15,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.login.ActualActivities.Functions.CommentAdapter;
 import com.example.login.ActualActivities.Functions.MyCommentAdapter;
@@ -35,15 +36,26 @@ public class TwoFragment extends Fragment {
     public RecyclerView recyclerView;
     public CommentAdapter adapter;
     public String userid;
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_two, container, false);
         recyclerView = view.findViewById(R.id.commentRecyclerView);
-        // Do UI setup here but don't populate RecyclerView yet
+        swipeRefreshLayout = view.findViewById(R.id.swipeRefreshLayout);
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                // Call a method to refresh the content
+                if (userid != null && !userid.isEmpty()) {
+                    getAllmyComments(userid);
+                }
+            }
+        });
+
         return view;
     }
-
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
@@ -71,11 +83,13 @@ public class TwoFragment extends Fragment {
                     @Override
                     public void onResponse(Call<List<MovieComment>> call, Response<List<MovieComment>> response) {
                         populateListView(response.body());
+                        swipeRefreshLayout.setRefreshing(false);
                     }
 
                     @Override
                     public void onFailure(Call<List<MovieComment>> call, Throwable t) {
                         Toast.makeText( getActivity() , "Failed to load users", Toast.LENGTH_LONG).show();
+                        swipeRefreshLayout.setRefreshing(false);
                     }
                 }); //
     }
