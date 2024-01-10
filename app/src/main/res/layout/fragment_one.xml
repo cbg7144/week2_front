@@ -7,6 +7,16 @@
     android:background="#FFFFFF"
     tools:context="com.example.login.ActualActivities.Fragment.OneFragment">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="40dp"
@@ -14,13 +24,14 @@
         android:layout_marginTop="10dp"
         android:src="@drawable/search_logo"
         android:layout_marginStart="5dp"
-        android:layout_marginRight="5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginRight="5dp"/>
+
+        <View
+            android:layout_width="1dp" android:layout_height="0dp"/>
 
     <EditText
         android:id="@+id/searchContact"
-        android:layout_width="280dp"
+        android:layout_width="260dp"
         android:layout_height="45dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/layout_search"
@@ -30,40 +41,32 @@
         android:inputType="textPersonName"
         android:paddingLeft="10dp"
         android:textColor="@color/black"
-        android:textColorHint="#706161"
-        app:layout_constraintBottom_toBottomOf="@id/imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.35"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.74" />
+        android:textColorHint="#706161"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/searchContact"
-        app:layout_constraintVertical_bias="0.0" />
+        <View
+            android:layout_width="1dp" android:layout_height="0dp"/>
 
     <Button
         android:id="@+id/btnGet"
         android:layout_width="75dp"
-        android:layout_height="45dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="9dp"
         android:layout_marginEnd="5dp"
-        android:onClick="showSearchedMovie"
-        android:text="검색"
-        android:fontFamily="@font/jalnan"
-        android:layout_marginTop="10dp"
-        android:textSize="15sp"
-        android:padding = "5dp"
         android:background="@drawable/layout_searchbutton"
-        app:layout_constraintBottom_toBottomOf="@id/searchContact"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.74" />
+        android:fontFamily="@font/jalnan"
+        android:onClick="showSearchedMovie"
+        android:padding="5dp"
+        android:text="검색"
+        android:textSize="15sp" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="670dp" />
+
+    </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

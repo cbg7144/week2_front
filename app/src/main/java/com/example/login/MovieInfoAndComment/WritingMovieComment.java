@@ -2,6 +2,7 @@ package com.example.login.MovieInfoAndComment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -67,7 +68,7 @@ public class WritingMovieComment extends AppCompatActivity {
                 String fullCommentText = fullComment.getText().toString();
 
                 // Passing string values instead of EditText objects
-                sendCommentToServer(oneLineCommentText, fullCommentText, intRating, movieTitle);
+                sendCommentToServer(oneLineCommentText, fullCommentText, intRating, movieTitle, docid);
             }
         });
 
@@ -111,7 +112,7 @@ public class WritingMovieComment extends AppCompatActivity {
                 });
     }
 
-    private void sendCommentToServer(String oneLineComment, String fullComment, int intRating, String movieTitle ){
+    private void sendCommentToServer(String oneLineComment, String fullComment, int intRating, String movieTitle, String docid ){
         RetrofitService retrofitService = new RetrofitService();
         MovieSearchAPI movieSearchAPI = retrofitService.getRetrofit().create(MovieSearchAPI.class);
 
@@ -127,6 +128,12 @@ public class WritingMovieComment extends AppCompatActivity {
                     public void onResponse(Call<MovieComment> call, Response<MovieComment> response) {
                         if(response.body() != null){
                             Log.e("ShowMovieInfo", "MovieComment is not null");
+
+                            Intent intent = new Intent(WritingMovieComment.this, ShowMovieInfo.class);
+                            intent.putExtra("tossDocid", docid);
+                            startActivity(intent);
+                            finish();
+
                         } else {
                             Log.e("ShowMovieInfo", "MovieComment is null");
                         }

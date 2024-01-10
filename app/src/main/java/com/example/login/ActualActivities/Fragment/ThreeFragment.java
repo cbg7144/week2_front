@@ -1,10 +1,12 @@
 package com.example.login.ActualActivities.Fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -29,7 +31,7 @@ import retrofit2.Response;
 public class ThreeFragment extends Fragment {
 
     // 초기 세팅 불변 값
-    Button ansBtn, nextBtn;
+    Button ansBtn, nextBtn, retryBtn;
     EditText entBoard;
 
     //초기 세팅 변하는 값
@@ -57,6 +59,7 @@ public class ThreeFragment extends Fragment {
         // 버튼 띄우기
         ansBtn = view.findViewById(R.id.AnsBtn);
         nextBtn = view.findViewById(R.id.NextBtn);
+        retryBtn = view.findViewById(R.id.RetryButton);
 
         // 입력창 띄우기
         entBoard = view.findViewById(R.id.EnterBoard);
@@ -66,6 +69,14 @@ public class ThreeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                compareWithAnswer(v);
+
+                // Clear focus from EditText
+                entBoard.clearFocus();
+
+                // Hide the keyboard
+                InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+
             }
         });
 
@@ -76,6 +87,15 @@ public class ThreeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 loadNextQuestion();
+
+            }
+        });
+
+        retryBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadNextQuestion();
+                retryBtn.setVisibility(View.GONE);
             }
         });
 
@@ -159,27 +179,20 @@ public class ThreeFragment extends Fragment {
     }
 
     private void visibilityConverter(){
-        ImageView ansPoster = getView().findViewById(R.id.AnsPoster);
-        TextView ansTitle = getView().findViewById(R.id.AnsTitle);
-        Button nextBtn = getView().findViewById(R.id.NextBtn);
+        // Array of view IDs to toggle visibility
+        int[] viewIds = {R.id.AnsPoster, R.id.AnsTitle, R.id.NextBtn, R.id.AnsBtn, R.id.EnterBoard, R.id.RealQuiz};
 
-        // Toggling visibility of AnsPoster
-        if (ansPoster.getVisibility() == View.VISIBLE) {
-            ansPoster.setVisibility(View.GONE);
-        } else {
-            ansPoster.setVisibility(View.VISIBLE);
-        }
-        // Toggling visibility of AnsTitle
-        if (ansTitle.getVisibility() == View.VISIBLE) {
-            ansTitle.setVisibility(View.GONE);
-        } else {
-            ansTitle.setVisibility(View.VISIBLE);
-        }
-        // Toggling visibility of NextBtn
-        if (nextBtn.getVisibility() == View.VISIBLE) {
-            nextBtn.setVisibility(View.GONE);
-        } else {
-            nextBtn.setVisibility(View.VISIBLE);
+        // Iterate over each view ID and toggle its visibility
+        for (int id : viewIds) {
+            View view = getView().findViewById(id);
+            if (view != null) {
+                view.setVisibility(view.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
+
+                // Check if the view is the EnterBoard and clear its text
+                if (id == R.id.EnterBoard) {
+                    ((EditText) view).setText(""); // This will clear the text
+                }
+            }
         }
     }
 
@@ -189,6 +202,7 @@ public class ThreeFragment extends Fragment {
         Toast.makeText(getActivity(), "Game Over! Your score: " + numOfAns, Toast.LENGTH_LONG).show();
         numOfAns = 0;
         numOfQuestion = 0;
+        retryBtn.setVisibility(View.VISIBLE);
     }
 
     private void showTotalScore(){

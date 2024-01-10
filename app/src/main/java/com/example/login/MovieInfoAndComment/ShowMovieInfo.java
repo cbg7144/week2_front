@@ -62,6 +62,7 @@ public class ShowMovieInfo extends AppCompatActivity {
                 Intent intent = new Intent(ShowMovieInfo.this, WritingMovieComment.class);
                 intent.putExtra("tossDocid", docid);
                 startActivity(intent);
+                finish();
             }
         });
 
