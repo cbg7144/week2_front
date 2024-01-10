@@ -16,6 +16,7 @@ import com.example.login.ActualActivities.Functions.CommentAdapter;
 import com.example.login.ActualActivities.Movie.Movie;
 import com.example.login.ActualActivities.Movie.MovieComment;
 import com.example.login.ActualActivities.Movie.MovieSearchAPI;
+import com.example.login.Membership.MainActivity;
 import com.example.login.Membership.kakao.RetrofitService;
 import com.example.login.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -42,7 +43,8 @@ public class ShowMovieInfo extends AppCompatActivity {
         setContentView(R.layout.activity_show_movie_info);
         // Retrieve the docid from the intent
         String docid = getIntent().getStringExtra("tossDocid");
-        Log.i("ShowMovieInfo", docid);
+        String userid = getIntent().getStringExtra("tossUserid");
+        //Toast.makeText(ShowMovieInfo.this, userid, Toast.LENGTH_SHORT).show();
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.post(new Runnable() {
@@ -61,6 +63,7 @@ public class ShowMovieInfo extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ShowMovieInfo.this, WritingMovieComment.class);
                 intent.putExtra("tossDocid", docid);
+                intent.putExtra("tossUserid", userid);
                 startActivity(intent);
                 finish();
             }

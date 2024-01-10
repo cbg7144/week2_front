@@ -23,8 +23,6 @@ public interface MovieSearchAPI {
 //    }
 
 
-
-
     //Docid를 주면, movie class 한개 받아오는 함수 만들기
     @GET("/movie/view")
     Call<Movie> getMovie(@Query("docid") String docid);
@@ -39,4 +37,7 @@ public interface MovieSearchAPI {
     // GameId를 주면, 해당 movie에 대한 정보를 가져옴
     @GET("/game/id")
     Call<MovieGame> getMovieGameInfo(@Query("id") String GameId);
+
+    @GET("/comment/load/id")
+    Call<List<MovieComment>> loadCommentbyId(@Query("id") String id);
 }

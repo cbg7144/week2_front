@@ -1,5 +1,7 @@
 package com.example.login.ActualActivities.Fragment;
 
+import static android.content.Intent.getIntent;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,7 +13,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,6 +24,7 @@ import com.example.login.ActualActivities.Functions.MovieAdapter;
 import com.example.login.ActualActivities.Movie.Movie;
 import com.example.login.ActualActivities.Movie.MovieSearchAPI;
 import com.example.login.ActualActivities.Movie.SearchMovie;
+import com.example.login.Membership.OurUser.SharedViewModel;
 import com.example.login.Membership.kakao.RetrofitService;
 import com.example.login.MovieInfoAndComment.ShowMovieInfo;
 import com.example.login.R;
@@ -34,11 +40,21 @@ public class OneFragment extends Fragment {
     public RecyclerView recyclerView;
     public MovieAdapter adapter;
     EditText searchContact;
+    public String userid;
 
 
     @Override // 뷰 객체가 반환된 직후에 호출, 뷰가 완전히 생성되었음을 보장
     public void onViewCreated(@NonNull View view, Bundle savedInstance){
         super.onViewCreated(view, savedInstance);
+        SharedViewModel sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
+        sharedViewModel.getTossUserid().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable String userId) {
+                userid = userId;
+                // userid 받아옴
+                //Toast.makeText(getActivity(),"userid is "+ userid, Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
@@ -126,6 +142,7 @@ public class OneFragment extends Fragment {
                 String tossDocid = clickedMovie.getDocid();
                 Intent intent = new Intent(getActivity(), ShowMovieInfo.class);
                 intent.putExtra("tossDocid", tossDocid);
+                intent.putExtra("tossUserid", userid);
                 startActivity(intent);
             }
         });
