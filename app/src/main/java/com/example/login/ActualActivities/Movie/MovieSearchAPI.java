@@ -1,6 +1,7 @@
 package com.example.login.ActualActivities.Movie;
 
 import java.util.List;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -15,6 +16,14 @@ public interface MovieSearchAPI {
 
     @GET("/movie/search")
     Call<List<Movie>> searchMovie(@Query("searchString") String searchString); //////////////////////
+//    @GetMapping ("/movie/search")
+//    public List<Movie> searchMovie(@RequestParam Map<String, String> body) { // Map<String, String> 빼먹어서 5시간 날림
+//        return movieService.searchMovies(body.get("searchString"));
+//        ////// movie repository에서 검색기능하는 함수 쓰기
+//    }
+
+
+
 
     //Docid를 주면, movie class 한개 받아오는 함수 만들기
     @GET("/movie/view")
