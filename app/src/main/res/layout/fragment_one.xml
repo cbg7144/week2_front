@@ -10,28 +10,33 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="40dp"
-        android:layout_height="58dp"
-        android:src="@drawable/baseline_zoom_in_24"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/search_logo"
+        android:layout_marginStart="5dp"
+        android:layout_marginRight="5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/searchContact"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:background="@drawable/search_box"
+        android:layout_width="280dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/layout_search"
         android:ems="10"
-        android:hint="       Search Movie"
+        android:fontFamily="@font/jalnan"
+        android:hint="Search Movie"
         android:inputType="textPersonName"
         android:paddingLeft="10dp"
         android:textColor="@color/black"
-        android:textColorHint="@color/black"
+        android:textColorHint="#706161"
         app:layout_constraintBottom_toBottomOf="@id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.35"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.74" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -46,14 +51,19 @@
 
     <Button
         android:id="@+id/btnGet"
-        android:layout_width="52dp"
-        android:layout_height="38dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="75dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="5dp"
         android:onClick="showSearchedMovie"
-        android:text="get"
-        android:textSize="0dp"
+        android:text="검색"
+        android:fontFamily="@font/jalnan"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp"
+        android:padding = "5dp"
+        android:background="@drawable/layout_searchbutton"
         app:layout_constraintBottom_toBottomOf="@id/searchContact"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.74" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
