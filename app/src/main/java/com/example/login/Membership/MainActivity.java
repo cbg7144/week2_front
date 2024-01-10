@@ -15,9 +15,12 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.example.login.Membership.OurUser.OurUser;
+import com.example.login.Membership.OurUser.OurUserAPI;
 import com.example.login.Membership.kakao.KakaoUser;
 import com.example.login.Membership.kakao.KakaoUserAPI;
 import com.example.login.Membership.kakao.KakaoUserInfo;
@@ -57,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     private ActivityMainBinding binding;
+    public boolean logInGrant;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,10 +75,12 @@ public class MainActivity extends AppCompatActivity {
         // Button 생성
         ImageButton kakao_login_button = (ImageButton)findViewById(R.id.kakao_login_button);
         Button signin_button = findViewById(R.id.signin) ;
+        Button self_Login_button = findViewById(R.id.loginbtn);
 
-//        // id 및 password ------------ 이건 형식이 뭘까요????
-//        String id = binding.idText.getText().toString();
-//        String pw = binding.passwordText.getText().toString();
+        // Edit Text
+        EditText idText, passwordText;
+        idText = findViewById(R.id.idText);
+        passwordText = findViewById(R.id.passwordText);
 
         // 회원가입 창으로 이동하는 버튼
         signin_button.setOnClickListener(new View.OnClickListener() {
@@ -97,6 +104,47 @@ public class MainActivity extends AppCompatActivity {
                     // 왜 두개지 ???
                     accountLogin();
                 }
+            }
+        });
+
+        self_Login_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String id = idText.getText().toString();
+                String password = passwordText.getText().toString();
+                loginOurMember(id, password);
+            }
+        });
+
+    }
+
+    private void loginOurMember(String id, String password){
+        OurUser ourUser = new OurUser();
+        ourUser.setId(id);
+        ourUser.setPwd(password);
+
+        RetrofitService retrofitService = new RetrofitService();
+        OurUserAPI ourUserAPI = retrofitService.getRetrofit().create(OurUserAPI.class);
+
+        ourUserAPI.login(id, password).enqueue(new Callback<Boolean>() {
+            @Override
+            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                if (response.isSuccessful() && response.body() != null){
+                    logInGrant = response.body();
+                    if(logInGrant){
+                        Intent intent = new Intent(MainActivity.this, RealMainActivity.class);
+                        startActivity(intent);
+                        finish();
+                    } else{
+                        Toast.makeText(MainActivity.this, "Not Our Member", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Log.e("OurUserAPI", "Response not successful or body is null, Response Code: " + response.code());
+                }
+            }
+            @Override
+            public void onFailure(Call<Boolean> call, Throwable t) {
+                Log.e("OurUserAPI", "Failed to communicate with server: " + t.getMessage());
             }
         });
 

@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#FF3482"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -12,7 +13,7 @@
       android:orientation="vertical"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.232"
+      app:layout_constraintVertical_bias="0.252"
       tools:ignore="MissingConstraints"
       tools:layout_editor_absoluteX="-16dp">
 
@@ -21,10 +22,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingBottom="10dp"
-        android:text="M O V I E"
-        android:textColor="#142387"
+        android:text="HIMOVIE"
+        android:fontFamily="@font/jalnan"
+        android:textColor="#FFFFFF"
         android:textSize="48sp"
         android:textStyle="bold"
+        android:elevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,8 +38,10 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="나만의 영화 공간을 구축해용"
-        android:textSize="14sp"
+        android:text="나만의 영화 공간"
+        android:textColor="#000000"
+        android:fontFamily="@font/jalnan"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -49,21 +54,25 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:orientation="vertical"
+      android:gravity="center"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.184"
+      app:layout_constraintHorizontal_bias="0.497"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.844"
+      app:layout_constraintVertical_bias="0.684"
       tools:ignore="MissingConstraints">
+
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:paddingBottom="5dp"
         android:text="회원가입"
-        android:textColor="@color/black"
+        android:fontFamily="@font/jalnan"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/newid"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,13 +81,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:layout_constraintVertical_bias="0.953" />
 
-
     <EditText
         android:id="@+id/newid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="아이디"
+        android:fontFamily="@font/jalnan"
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/newpwd"
         app:layout_constraintEnd_toEndOf="@+id/newpwd"
@@ -92,6 +101,7 @@
         android:layout_marginBottom="48dp"
         android:ems="10"
         android:hint="비밀번호"
+        android:fontFamily="@font/jalnan"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,16 +111,18 @@
 
   <Button
       android:id="@+id/okbutton"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:paddingVertical="30dp"
-      android:text="Ok!"
+      android:layout_width="163dp"
+      android:layout_height="66dp"
+      android:background="@drawable/layout_signupbutton"
+      android:fontFamily="@font/jalnan"
+      android:gravity="center"
+      android:paddingVertical="20dp"
+      android:text="가입"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.869"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.797" />
+      app:layout_constraintVertical_bias="0.83" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
