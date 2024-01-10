@@ -38,6 +38,9 @@ public class MyCommentAdapter extends RecyclerView.Adapter<MyCommentHolder> {
         RatingBar ratingBar = holder.itemView.findViewById(R.id.ratingBarcomment);
         ratingBar.setIsIndicator(true);
         ratingBar.setRating(ratingValue);
+
+        holder.movieTitle.setText(movieComment.getMovie().getTitle());
+
     }
 
     @Override

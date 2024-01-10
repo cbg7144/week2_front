@@ -38,8 +38,8 @@ public class TwoFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        View view = inflater.inflate(R.layout.fragment_one, container, false);
-        recyclerView = view.findViewById(R.id.recyclerView);
+        View view = inflater.inflate(R.layout.fragment_two, container, false);
+        recyclerView = view.findViewById(R.id.commentRecyclerView);
         // Do UI setup here but don't populate RecyclerView yet
         return view;
     }
@@ -77,7 +77,7 @@ public class TwoFragment extends Fragment {
                     public void onFailure(Call<List<MovieComment>> call, Throwable t) {
                         Toast.makeText( getActivity() , "Failed to load users", Toast.LENGTH_LONG).show();
                     }
-                });
+                }); //
     }
 
     private void populateListView(List<MovieComment> movieCommentList){
