@@ -40,7 +40,8 @@ public class WritingMovieComment extends AppCompatActivity {
 
         // Retrieve the docid from the intent
         String docid = getIntent().getStringExtra("tossDocid");
-        Log.i("WritingMovieComment", docid);
+        String userid = getIntent().getStringExtra("tossUserid");
+
 
         getMovieInfo(docid);
 
@@ -68,7 +69,7 @@ public class WritingMovieComment extends AppCompatActivity {
                 String fullCommentText = fullComment.getText().toString();
 
                 // Passing string values instead of EditText objects
-                sendCommentToServer(oneLineCommentText, fullCommentText, intRating, movieTitle, docid);
+                sendCommentToServer(oneLineCommentText, fullCommentText, intRating, movieTitle, docid, userid);
             }
         });
 
@@ -112,7 +113,7 @@ public class WritingMovieComment extends AppCompatActivity {
                 });
     }
 
-    private void sendCommentToServer(String oneLineComment, String fullComment, int intRating, String movieTitle, String docid ){
+    private void sendCommentToServer(String oneLineComment, String fullComment, int intRating, String movieTitle, String docid, String userid ){
         RetrofitService retrofitService = new RetrofitService();
         MovieSearchAPI movieSearchAPI = retrofitService.getRetrofit().create(MovieSearchAPI.class);
 
@@ -121,6 +122,7 @@ public class WritingMovieComment extends AppCompatActivity {
         sendingMovieComment.setLinecomment(oneLineComment);
         sendingMovieComment.setScore(intRating);
         sendingMovieComment.setLongcomment(fullComment);
+        sendingMovieComment.setUserid(userid);
 
         movieSearchAPI.saveComment(sendingMovieComment)
                 .enqueue(new Callback<MovieComment>() {

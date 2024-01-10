@@ -5,6 +5,15 @@ public class SendingMovieComment {
     private String linecomment;
     private String longcomment;
     private String movieTitle;
+    private String userid;
+
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
+    }
 
     public int getScore() {
         return score;

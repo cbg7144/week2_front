@@ -2,6 +2,8 @@ package com.example.login.Membership;
 
 // Q. Difference between login() and accountlogin()
 
+import static android.content.Intent.getIntent;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -132,7 +134,9 @@ public class MainActivity extends AppCompatActivity {
                 if (response.isSuccessful() && response.body() != null){
                     logInGrant = response.body();
                     if(logInGrant){
+                        // RealMainActivity로 넘어갈때 user id 받아오기
                         Intent intent = new Intent(MainActivity.this, RealMainActivity.class);
+                        intent.putExtra("tossUserid", id);
                         startActivity(intent);
                         finish();
                     } else{

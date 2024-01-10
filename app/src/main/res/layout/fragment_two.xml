@@ -8,10 +8,10 @@
     tools:context="com.example.login.ActualActivities.Fragment.OneFragment">
 
     <TextView
-        android:id="@+id/MyMovieList"
+        android:id="@+id/MyCommentTitle"
         android:layout_width="196dp"
         android:layout_height="41dp"
-        android:text="나의 영화 리뷰"
+        android:text="내가 쓴 감상평"
         android:fontFamily="@font/jalnan"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -21,19 +21,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.037" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/MyMovieList">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/commentRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/MyCommentTitle"
+        app:layout_constraintVertical_bias="0.0" />
 
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewofMyComment"
-            android:layout_width="match_parent"
-            android:layout_height="650dp" />
-
-    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
