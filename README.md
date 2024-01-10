@@ -18,6 +18,8 @@
 ### 로그인 화면
 
 저희가 구현한 로그인 방법은 두가지로, 카카오톡 로그인과 앱 자체 로그인이 있습니다. 
+<img src="https://github.com/cbg7144/week2_front/assets/128574611/a6d48b76-0dba-4daa-ac69-81d4b24207d2" width="768px" height="432px"/> 
+<img src="https://github.com/cbg7144/week2_front/assets/128574611/0c57fbc0-7e23-456d-9b6e-67b9d4fa7b8d" width="768px" height="432px"/> 
 
 - **DB**
     - _member (카카오톡 로그인)
@@ -34,6 +36,7 @@
 ---
 
 ### Tab1 영화 검색 및 영화 감상평 작성
+<img src="https://github.com/cbg7144/week2_front/assets/128574611/6cc4478b-9fa3-487b-bf5c-f5e36d3c2fa9" width="768px" height="432px"/> 
 
 영화 검색이 가능하며 해당 영화에 대한 감상평 작성 및 감상평 모아보기가 가능합니다.
 
@@ -70,6 +73,7 @@
 ---
 
 ### Tab2 사용자별 영화감상평 모아보기
+<img src="https://github.com/cbg7144/week2_front/assets/128574611/fadf9c0f-b6e8-4500-89d8-c5984bdfc9eb" width="768px" height="432px"/> 
 
 영화
 
@@ -85,6 +89,7 @@
 ---
 
 ### Tab3 영화 초성게임
+<img src="https://github.com/cbg7144/week2_front/assets/128574611/a7c9b840-bb45-46a4-ab28-f675f4f06dcf" width="768px" height="432px"/> 
 
 영화 초성을 보고 영화 제목을 맞추는 영화 관련 미니게임이 가능합니다.
 
