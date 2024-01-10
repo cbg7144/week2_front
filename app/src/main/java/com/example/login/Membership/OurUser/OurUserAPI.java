@@ -1,9 +1,11 @@
 package com.example.login.Membership.OurUser;
 
+import kotlin.ParameterName;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface OurUserAPI {
 
@@ -13,7 +15,7 @@ public interface OurUserAPI {
 
     // 로그인
     @GET("/userinfo/login")
-    Call<Boolean> login(OurUser ourUser);
+    Call<Boolean> login(@Query("id") String id, @Query("pwd") String password);
 
 
 }
