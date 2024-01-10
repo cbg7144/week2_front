@@ -10,13 +10,13 @@ import com.example.login.R;
 
 public class MyCommentHolder extends RecyclerView.ViewHolder {
 
-    TextView linecomment, longcomment;
+    TextView linecomment, longcomment, movieTitle;
 
     public MyCommentHolder(@NonNull View itemView){
         super(itemView);
         linecomment = itemView.findViewById(R.id.oneLineMyComment);
         longcomment = itemView.findViewById(R.id.longLineMyComment);
-
+        movieTitle = itemView.findViewById(R.id.commentMovieTitle);
     }
 
 
