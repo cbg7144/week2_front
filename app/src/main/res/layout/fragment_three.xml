@@ -22,83 +22,92 @@
         app:layout_constraintVertical_bias="0.037" />
 
     <TextView
-        android:id="@+id/WhatIsTitle"
-        android:layout_width="170dp"
-        android:layout_height="30dp"
-        android:text="이 영화의 제목은?"
-        android:textSize="20sp"
-        android:gravity="center"
-        android:fontFamily="@font/jalnan"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.226" />
-
-    <TextView
         android:id="@+id/RealQuiz"
         android:layout_width="225dp"
         android:layout_height="136dp"
-        android:text="ㅎㄹ ㅍㅌ"
-        android:textSize="30sp"
-        android:gravity="center"
-        android:textColor="#FFFFFF"
-        android:fontFamily="@font/jalnan"
         android:background='@drawable/layout_question'
         android:elevation="10dp"
+        android:fontFamily="@font/jalnan"
+        android:gravity="center"
+        android:text="ㅎㄹ ㅍㅌ"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.339" />
+        app:layout_constraintVertical_bias="0.396" />
+
+    <TextView
+        android:id="@+id/WhatIsTitle"
+        android:layout_width="170dp"
+        android:layout_height="30dp"
+        android:fontFamily="@font/jalnan"
+        android:gravity="center"
+        android:text="이 영화의 제목은?"
+        android:textSize="20sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.273" />
+
+    <EditText
+        android:id="@+id/EnterBoard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="12dp"
+        android:fontFamily="@font/jalnan"
+        android:gravity="center"
+        android:hint="입력하세요"
+        android:text=""
+        android:textSize="15sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/AnsBtn"
+        app:layout_constraintEnd_toEndOf="@+id/RealQuiz"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/RealQuiz"
+        app:layout_constraintTop_toBottomOf="@id/WhatIsTitle"
+        app:layout_constraintVertical_bias="0.822" />
+
+    <Button
+        android:id="@+id/AnsBtn"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:background="@drawable/layout_button"
+        android:fontFamily="@font/jalnan"
+        android:gravity="center"
+        android:text="확인"
+        android:textSize="15sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.731" />
+
+    <!--원래: visible-->
+
+    <!--원래: gone-->
 
     <TextView
         android:id="@+id/ScoreBoard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="5/5"
         android:fontFamily="@font/jalnan"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.675"
-        app:layout_constraintHorizontal_bias="0.75"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/EnterBoard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:hint="입력하세요"
-        android:fontFamily="@font/jalnan"
+        android:text="정답/문제"
         android:textSize="15sp"
-        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.866"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.57" />
-    <!--원래: visible-->
-    <Button
-        android:visibility="visible"
-        android:id="@+id/AnsBtn"
-        android:layout_width="110dp"
-        android:layout_height="50dp"
-        android:text="확인"
-        android:fontFamily="@font/jalnan"
-        android:textSize="15sp"
-        android:gravity="center"
-        android:background="@drawable/layout_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.68" />
+        app:layout_constraintVertical_bias="0.724" />
 
-    <!--원래: gone-->
     <ImageView
         android:visibility="gone"
         android:id="@+id/AnsPoster"
@@ -119,6 +128,8 @@
         android:layout_height="55dp"
         android:text="해리포터"
         android:gravity="center"
+        android:fontFamily="@font/jalnan"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -130,6 +141,8 @@
         android:id="@+id/NextBtn"
         android:layout_width="110dp"
         android:layout_height="50dp"
+        android:fontFamily="@font/jalnan"
+        android:textSize="20sp"
         android:text="다음"
         android:gravity="center"
         android:background="@drawable/layout_button"
@@ -138,4 +151,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.75" />
+
+    <Button
+        android:visibility="gone"
+        android:id="@+id/RetryButton"
+        android:layout_width="117dp"
+        android:layout_height="45dp"
+        android:background='@drawable/layout_question'
+        android:fontFamily="@font/jalnan"
+        android:gravity="center"
+        android:text="Retry"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.861" />
 </androidx.constraintlayout.widget.ConstraintLayout>
